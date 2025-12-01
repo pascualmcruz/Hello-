@@ -1,15 +1,101 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello!</title>
-</head>
-<body>
-  <h1 style="color:purple;">Welcome to my website!</h1>
-  <h2>Hello my good friend</h2>
-  Hello, world!
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hello — Personal Site</title>
+    <meta name="description" content="Personal homepage" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">Pasc Mc</a>
+        <nav class="site-nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1>Hi, I'm <span class="accent">Pasc Mc</span>.</h1>
+            <p class="lead">I build simple websites and delightful user experiences. Welcome to my personal site — feel free to look around.</p>
+            <p>
+              <a class="btn" href="#contact">Get in touch</a>
+              <a class="btn btn-outline" href="#projects">See projects</a>
+            </p>
+          </div>
+          <div class="hero-photo" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h2>About</h2>
+          <p>Hello — I'm a developer/designer who enjoys building clean, accessible interfaces. Replace this paragraph with a short bio about yourself, your skills, and what you're currently working on.</p>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="grid projects-grid">
+            <article class="card">
+              <h3>Project One</h3>
+              <p>Short description of a project. Link to the repo or demo when ready.</p>
+              <p><a href="#" class="link">View project</a></p>
+            </article>
+            <article class="card">
+              <h3>Project Two</h3>
+              <p>Short description of another project or experiment.</p>
+              <p><a href="#" class="link">View project</a></p>
+            </article>
+            <article class="card">
+              <h3>Project Three</h3>
+              <p>Another small project summary. Replace these with real items.</p>
+              <p><a href="#" class="link">View project</a></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>If you'd like to reach me, email <a class="link" href="mailto:you@example.com">you@example.com</a> or use the minimal contact form below.</p>
+          <form class="contact-form" action="#" method="post" onsubmit="alert('This form is a placeholder. Replace with your backend or use mailto.'); return false;">
+            <div class="form-row"><input type="text" name="name" placeholder="Your name" required /></div>
+            <div class="form-row"><input type="email" name="email" placeholder="Your email" required /></div>
+            <div class="form-row"><textarea name="message" rows="5" placeholder="Message" required></textarea></div>
+            <div class="form-row"><button class="btn" type="submit">Send message</button></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> Your Name. Built with ❤️.</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      // Smooth scroll for internal links (basic)
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', e=>{
+          const target = a.getAttribute('href');
+          if(target === '#') return;
+          const el = document.querySelector(target);
+          if(el) { e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+        });
+      });
+    </script>
+  </body>
 </html>
