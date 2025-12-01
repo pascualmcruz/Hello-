@@ -1,0 +1,68 @@
+:root{
+	--bg:#f7f9fb;
+	--card:#ffffff;
+	--text:#0f1720;
+	--muted:#52606d;
+	--accent:#6b46c1;
+	--accent-2:#805ad5;
+	--max-width:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background:var(--bg);
+	color:var(--text);
+	line-height:1.5;
+	-webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+
+.site-header{background:transparent;position:sticky;top:0;z-index:10}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.brand{font-weight:700;color:var(--text);text-decoration:none;font-size:1.05rem}
+.site-nav a{margin-left:1rem;color:var(--muted);text-decoration:none}
+.site-nav a:hover{color:var(--text)}
+
+.hero{padding:4rem 0;background:linear-gradient(180deg, rgba(107,70,193,0.08), transparent)}
+.hero-inner{display:grid;grid-template-columns:1fr 280px;gap:2rem;align-items:center}
+.hero-content h1{font-size:2.25rem;margin:0 0 .5rem}
+.hero-content .lead{color:var(--muted);margin:0 0 1rem}
+.accent{color:var(--accent)}
+.hero-photo{width:100%;height:220px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 6px 18px rgba(99,102,241,0.12)}
+
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
+.btn-outline{background:transparent;border:1px solid rgba(15,23,32,0.06);color:var(--text);margin-left:.5rem}
+
+.section{padding:3rem 0}
+.section h2{margin-top:0}
+
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,32,0.04)}
+.card h3{margin-top:0}
+.link{color:var(--accent);text-decoration:none}
+
+.contact-form{max-width:640px}
+.contact-form .form-row{margin-bottom:.75rem}
+.contact-form input,.contact-form textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid #e6edf2;background:#fff}
+.contact-form button{border:none}
+
+.site-footer{padding:1.5rem 0;color:var(--muted);text-align:center}
+
+@media (max-width:900px){
+	.hero-inner{grid-template-columns:1fr;}
+	.projects-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+	.projects-grid{grid-template-columns:1fr}
+	.site-nav{display:none}
+	.hero-content h1{font-size:1.6rem}
+}
+
+/* Small utilities */
+.lead{font-size:1.05rem}
+.muted{color:var(--muted)}
+
